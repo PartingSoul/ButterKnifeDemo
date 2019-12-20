@@ -37,14 +37,14 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mUnbinder = ButterKnife.bind(this);
         View contentView = findViewById(android.R.id.content);
         new ViewHolder(contentView);
     }
 
     @OnClick(R.id.bt)
     void onClick() {
-        Intent intent = new Intent(this,CustomViewInjectActivity.class);
+        Intent intent = new Intent(this, CustomViewInjectActivity.class);
         startActivity(intent);
     }
 
